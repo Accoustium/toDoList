@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package user;
+
+message User {
+    string username = 1;
+    ContactInfo contact = 2;
+}
+
+message ContactInfo {
+    string email = 1;
+    int32 homePhone = 2;
+    int32 mobilePhone = 3;
+    AddressInfo address = 4;
+}
+
+message AddressInfo {
+    AddressInfoUS addressUS = 1;
+    bool useAddressUS = 2;
+}
+
+message AddressInfoUS {
+    string Street1 = 1;
+    string Street2 = 2;
+    string City = 3;
+    string State = 4;
+    int32 Zip = 5;
+}

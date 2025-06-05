@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "protos.user.proto";
+
+package todolist;
+
+message ToDoList {
+  user.User singleUser = 1;
+}
