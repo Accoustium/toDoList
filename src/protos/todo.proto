@@ -16,7 +16,7 @@ message ToDoItem {
   int64 dueDate = 8; // Due date in Unix timestamp format
   int64 createdAt = 9; // Creation date in Unix timestamp format
   int64 updatedAt = 10; // Last updated date in Unix timestamp format
-  string id = 11; // Unique identifier for the ToDoItem
+  ToDoId id = 11; // Unique identifier for the ToDoItem
   int32 storyPoints = 12; // Story points for the ToDoItem
 }
 
@@ -27,10 +27,14 @@ message ToDoProject {
   int64 endDate = 4; // End date in Unix timestamp format
 }
 
+message ToDoId {
+  string id = 1; // Unique identifier for the ToDoItem
+}
+
 service ToDoService {
   rpc CreateToDoItem(ToDoItem) returns (ToDoItem);
-  rpc GetToDoItemById(string) returns (ToDoItem);
+  rpc GetToDoItemById(ToDoId) returns (ToDoItem);
   rpc UpdateToDoItem(ToDoItem) returns (ToDoItem);
-  rpc DeleteToDoItem(string) returns (google.protobuf.Empty);
+  rpc DeleteToDoItem(ToDoId) returns (google.protobuf.Empty);
   rpc ListToDoItems(google.protobuf.Empty) returns (stream ToDoItem);
 }
