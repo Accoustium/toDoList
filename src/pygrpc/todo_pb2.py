@@ -9,9 +9,13 @@ from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 6, 30, 0, "", "todo.proto"
+    _runtime_version.Domain.PUBLIC,
+    6,
+    30,
+    0,
+    '',
+    'todo.proto'
 )
 # @@protoc_insertion_point(imports)
 
@@ -19,19 +23,22 @@ _sym_db = _symbol_database.Default()
 
 
 import user_pb2 as user__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\ntodo.proto\x12\x08todolist\x1a\nuser.proto"\x80\x02\n\x08ToDoItem\x12\x0e\n\x06\x61uthor\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tcompleted\x18\x04 \x01(\x08\x12\x1b\n\x06groups\x18\x05 \x03(\x0b\x32\x0b.user.Group\x12&\n\x07project\x18\x06 \x01(\x0b\x32\x15.todolist.ToDoProject\x12\x10\n\x08priority\x18\x07 \x01(\x05\x12\x0f\n\x07\x64ueDate\x18\x08 \x01(\x03\x12\x11\n\tcreatedAt\x18\t \x01(\x03\x12\x11\n\tupdatedAt\x18\n \x01(\x03\x12\n\n\x02id\x18\x0b \x01(\t\x12\x13\n\x0bstoryPoints\x18\x0c \x01(\x05"b\n\x0bToDoProject\x12\x13\n\x0bprojectName\x18\x01 \x01(\t\x12\x1a\n\x12projectDescription\x18\x02 \x01(\t\x12\x11\n\tstartDate\x18\x03 \x01(\x03\x12\x0f\n\x07\x65ndDate\x18\x04 \x01(\x03\x62\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\ntodo.proto\x12\x08todolist\x1a\nuser.proto\x1a\x1bgoogle/protobuf/empty.proto\"\x92\x02\n\x08ToDoItem\x12\x0e\n\x06\x61uthor\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tcompleted\x18\x04 \x01(\x08\x12\x1b\n\x06groups\x18\x05 \x03(\x0b\x32\x0b.user.Group\x12&\n\x07project\x18\x06 \x01(\x0b\x32\x15.todolist.ToDoProject\x12\x10\n\x08priority\x18\x07 \x01(\x05\x12\x0f\n\x07\x64ueDate\x18\x08 \x01(\x03\x12\x11\n\tcreatedAt\x18\t \x01(\x03\x12\x11\n\tupdatedAt\x18\n \x01(\x03\x12\x1c\n\x02id\x18\x0b \x01(\x0b\x32\x10.todolist.ToDoId\x12\x13\n\x0bstoryPoints\x18\x0c \x01(\x05\"b\n\x0bToDoProject\x12\x13\n\x0bprojectName\x18\x01 \x01(\t\x12\x1a\n\x12projectDescription\x18\x02 \x01(\t\x12\x11\n\tstartDate\x18\x03 \x01(\x03\x12\x0f\n\x07\x65ndDate\x18\x04 \x01(\x03\"\x14\n\x06ToDoId\x12\n\n\x02id\x18\x01 \x01(\t2\xb5\x02\n\x0bToDoService\x12\x38\n\x0e\x43reateToDoItem\x12\x12.todolist.ToDoItem\x1a\x12.todolist.ToDoItem\x12\x37\n\x0fGetToDoItemById\x12\x10.todolist.ToDoId\x1a\x12.todolist.ToDoItem\x12\x38\n\x0eUpdateToDoItem\x12\x12.todolist.ToDoItem\x1a\x12.todolist.ToDoItem\x12:\n\x0e\x44\x65leteToDoItem\x12\x10.todolist.ToDoId\x1a\x16.google.protobuf.Empty\x12=\n\rListToDoItems\x12\x16.google.protobuf.Empty\x1a\x12.todolist.ToDoItem0\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "todo_pb2", _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'todo_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-    DESCRIPTOR._loaded_options = None
-    _globals["_TODOITEM"]._serialized_start = 37
-    _globals["_TODOITEM"]._serialized_end = 293
-    _globals["_TODOPROJECT"]._serialized_start = 295
-    _globals["_TODOPROJECT"]._serialized_end = 393
+  DESCRIPTOR._loaded_options = None
+  _globals['_TODOITEM']._serialized_start=66
+  _globals['_TODOITEM']._serialized_end=340
+  _globals['_TODOPROJECT']._serialized_start=342
+  _globals['_TODOPROJECT']._serialized_end=440
+  _globals['_TODOID']._serialized_start=442
+  _globals['_TODOID']._serialized_end=462
+  _globals['_TODOSERVICE']._serialized_start=465
+  _globals['_TODOSERVICE']._serialized_end=774
 # @@protoc_insertion_point(module_scope)

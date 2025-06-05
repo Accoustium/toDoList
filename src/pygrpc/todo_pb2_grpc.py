@@ -3,25 +3,268 @@
 import grpc
 import warnings
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
+import todo_pb2 as todo__pb2
 
-GRPC_GENERATED_VERSION = "1.72.1"
+GRPC_GENERATED_VERSION = '1.72.1'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
 try:
     from grpc._utilities import first_version_is_lower
-
-    _version_not_supported = first_version_is_lower(
-        GRPC_VERSION, GRPC_GENERATED_VERSION
-    )
+    _version_not_supported = first_version_is_lower(GRPC_VERSION, GRPC_GENERATED_VERSION)
 except ImportError:
     _version_not_supported = True
 
 if _version_not_supported:
     raise RuntimeError(
-        f"The grpc package installed is at version {GRPC_VERSION},"
-        + f" but the generated code in todo_pb2_grpc.py depends on"
-        + f" grpcio>={GRPC_GENERATED_VERSION}."
-        + f" Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}"
-        + f" or downgrade your generated code using grpcio-tools<={GRPC_VERSION}."
+        f'The grpc package installed is at version {GRPC_VERSION},'
+        + f' but the generated code in todo_pb2_grpc.py depends on'
+        + f' grpcio>={GRPC_GENERATED_VERSION}.'
+        + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
+        + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
+
+
+class ToDoServiceStub(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.CreateToDoItem = channel.unary_unary(
+                '/todolist.ToDoService/CreateToDoItem',
+                request_serializer=todo__pb2.ToDoItem.SerializeToString,
+                response_deserializer=todo__pb2.ToDoItem.FromString,
+                _registered_method=True)
+        self.GetToDoItemById = channel.unary_unary(
+                '/todolist.ToDoService/GetToDoItemById',
+                request_serializer=todo__pb2.ToDoId.SerializeToString,
+                response_deserializer=todo__pb2.ToDoItem.FromString,
+                _registered_method=True)
+        self.UpdateToDoItem = channel.unary_unary(
+                '/todolist.ToDoService/UpdateToDoItem',
+                request_serializer=todo__pb2.ToDoItem.SerializeToString,
+                response_deserializer=todo__pb2.ToDoItem.FromString,
+                _registered_method=True)
+        self.DeleteToDoItem = channel.unary_unary(
+                '/todolist.ToDoService/DeleteToDoItem',
+                request_serializer=todo__pb2.ToDoId.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.ListToDoItems = channel.unary_stream(
+                '/todolist.ToDoService/ListToDoItems',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=todo__pb2.ToDoItem.FromString,
+                _registered_method=True)
+
+
+class ToDoServiceServicer(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def CreateToDoItem(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetToDoItemById(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateToDoItem(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteToDoItem(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListToDoItems(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_ToDoServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'CreateToDoItem': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateToDoItem,
+                    request_deserializer=todo__pb2.ToDoItem.FromString,
+                    response_serializer=todo__pb2.ToDoItem.SerializeToString,
+            ),
+            'GetToDoItemById': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetToDoItemById,
+                    request_deserializer=todo__pb2.ToDoId.FromString,
+                    response_serializer=todo__pb2.ToDoItem.SerializeToString,
+            ),
+            'UpdateToDoItem': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateToDoItem,
+                    request_deserializer=todo__pb2.ToDoItem.FromString,
+                    response_serializer=todo__pb2.ToDoItem.SerializeToString,
+            ),
+            'DeleteToDoItem': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteToDoItem,
+                    request_deserializer=todo__pb2.ToDoId.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListToDoItems': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListToDoItems,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=todo__pb2.ToDoItem.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'todolist.ToDoService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('todolist.ToDoService', rpc_method_handlers)
+
+
+ # This class is part of an EXPERIMENTAL API.
+class ToDoService(object):
+    """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def CreateToDoItem(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/todolist.ToDoService/CreateToDoItem',
+            todo__pb2.ToDoItem.SerializeToString,
+            todo__pb2.ToDoItem.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetToDoItemById(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/todolist.ToDoService/GetToDoItemById',
+            todo__pb2.ToDoId.SerializeToString,
+            todo__pb2.ToDoItem.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateToDoItem(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/todolist.ToDoService/UpdateToDoItem',
+            todo__pb2.ToDoItem.SerializeToString,
+            todo__pb2.ToDoItem.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteToDoItem(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/todolist.ToDoService/DeleteToDoItem',
+            todo__pb2.ToDoId.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListToDoItems(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/todolist.ToDoService/ListToDoItems',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            todo__pb2.ToDoItem.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

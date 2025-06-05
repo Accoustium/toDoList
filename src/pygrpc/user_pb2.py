@@ -9,32 +9,36 @@ from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import runtime_version as _runtime_version
 from google.protobuf import symbol_database as _symbol_database
 from google.protobuf.internal import builder as _builder
-
 _runtime_version.ValidateProtobufRuntimeVersion(
-    _runtime_version.Domain.PUBLIC, 6, 30, 0, "", "user.proto"
+    _runtime_version.Domain.PUBLIC,
+    6,
+    30,
+    0,
+    '',
+    'user.proto'
 )
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
-    b'\n\nuser.proto\x12\x04user"<\n\x04User\x12\x10\n\x08username\x18\x01 \x01(\t\x12"\n\x07\x63ontact\x18\x02 \x01(\x0b\x32\x11.user.ContactInfo"7\n\x05Group\x12\x11\n\tgroupName\x18\x01 \x01(\t\x12\x1b\n\x07members\x18\x02 \x03(\x0b\x32\n.user.User"h\n\x0b\x43ontactInfo\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x11\n\thomePhone\x18\x02 \x01(\x05\x12\x13\n\x0bmobilePhone\x18\x03 \x01(\x05\x12"\n\x07\x61\x64\x64ress\x18\x04 \x01(\x0b\x32\x11.user.AddressInfo"K\n\x0b\x41\x64\x64ressInfo\x12&\n\taddressUS\x18\x01 \x01(\x0b\x32\x13.user.AddressInfoUS\x12\x14\n\x0cuseAddressUS\x18\x02 \x01(\x08"[\n\rAddressInfoUS\x12\x0f\n\x07Street1\x18\x01 \x01(\t\x12\x0f\n\x07Street2\x18\x02 \x01(\t\x12\x0c\n\x04\x43ity\x18\x03 \x01(\t\x12\r\n\x05State\x18\x04 \x01(\t\x12\x0b\n\x03Zip\x18\x05 \x01(\x05\x62\x06proto3'
-)
+
+
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nuser.proto\x12\x04user\"<\n\x04User\x12\x10\n\x08username\x18\x01 \x01(\t\x12\"\n\x07\x63ontact\x18\x02 \x01(\x0b\x32\x11.user.ContactInfo\"7\n\x05Group\x12\x11\n\tgroupName\x18\x01 \x01(\t\x12\x1b\n\x07members\x18\x02 \x03(\x0b\x32\n.user.User\"h\n\x0b\x43ontactInfo\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x11\n\thomePhone\x18\x02 \x01(\x05\x12\x13\n\x0bmobilePhone\x18\x03 \x01(\x05\x12\"\n\x07\x61\x64\x64ress\x18\x04 \x01(\x0b\x32\x11.user.AddressInfo\"K\n\x0b\x41\x64\x64ressInfo\x12&\n\taddressUS\x18\x01 \x01(\x0b\x32\x13.user.AddressInfoUS\x12\x14\n\x0cuseAddressUS\x18\x02 \x01(\x08\"[\n\rAddressInfoUS\x12\x0f\n\x07Street1\x18\x01 \x01(\t\x12\x0f\n\x07Street2\x18\x02 \x01(\t\x12\x0c\n\x04\x43ity\x18\x03 \x01(\t\x12\r\n\x05State\x18\x04 \x01(\t\x12\x0b\n\x03Zip\x18\x05 \x01(\x05\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "user_pb2", _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'user_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-    DESCRIPTOR._loaded_options = None
-    _globals["_USER"]._serialized_start = 20
-    _globals["_USER"]._serialized_end = 80
-    _globals["_GROUP"]._serialized_start = 82
-    _globals["_GROUP"]._serialized_end = 137
-    _globals["_CONTACTINFO"]._serialized_start = 139
-    _globals["_CONTACTINFO"]._serialized_end = 243
-    _globals["_ADDRESSINFO"]._serialized_start = 245
-    _globals["_ADDRESSINFO"]._serialized_end = 320
-    _globals["_ADDRESSINFOUS"]._serialized_start = 322
-    _globals["_ADDRESSINFOUS"]._serialized_end = 413
+  DESCRIPTOR._loaded_options = None
+  _globals['_USER']._serialized_start=20
+  _globals['_USER']._serialized_end=80
+  _globals['_GROUP']._serialized_start=82
+  _globals['_GROUP']._serialized_end=137
+  _globals['_CONTACTINFO']._serialized_start=139
+  _globals['_CONTACTINFO']._serialized_end=243
+  _globals['_ADDRESSINFO']._serialized_start=245
+  _globals['_ADDRESSINFO']._serialized_end=320
+  _globals['_ADDRESSINFOUS']._serialized_start=322
+  _globals['_ADDRESSINFOUS']._serialized_end=413
 # @@protoc_insertion_point(module_scope)

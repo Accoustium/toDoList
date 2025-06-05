@@ -12,11 +12,7 @@ class User(_message.Message):
     CONTACT_FIELD_NUMBER: _ClassVar[int]
     username: str
     contact: ContactInfo
-    def __init__(
-        self,
-        username: _Optional[str] = ...,
-        contact: _Optional[_Union[ContactInfo, _Mapping]] = ...,
-    ) -> None: ...
+    def __init__(self, username: _Optional[str] = ..., contact: _Optional[_Union[ContactInfo, _Mapping]] = ...) -> None: ...
 
 class Group(_message.Message):
     __slots__ = ("groupName", "members")
@@ -24,11 +20,7 @@ class Group(_message.Message):
     MEMBERS_FIELD_NUMBER: _ClassVar[int]
     groupName: str
     members: _containers.RepeatedCompositeFieldContainer[User]
-    def __init__(
-        self,
-        groupName: _Optional[str] = ...,
-        members: _Optional[_Iterable[_Union[User, _Mapping]]] = ...,
-    ) -> None: ...
+    def __init__(self, groupName: _Optional[str] = ..., members: _Optional[_Iterable[_Union[User, _Mapping]]] = ...) -> None: ...
 
 class ContactInfo(_message.Message):
     __slots__ = ("email", "homePhone", "mobilePhone", "address")
@@ -40,13 +32,7 @@ class ContactInfo(_message.Message):
     homePhone: int
     mobilePhone: int
     address: AddressInfo
-    def __init__(
-        self,
-        email: _Optional[str] = ...,
-        homePhone: _Optional[int] = ...,
-        mobilePhone: _Optional[int] = ...,
-        address: _Optional[_Union[AddressInfo, _Mapping]] = ...,
-    ) -> None: ...
+    def __init__(self, email: _Optional[str] = ..., homePhone: _Optional[int] = ..., mobilePhone: _Optional[int] = ..., address: _Optional[_Union[AddressInfo, _Mapping]] = ...) -> None: ...
 
 class AddressInfo(_message.Message):
     __slots__ = ("addressUS", "useAddressUS")
@@ -54,11 +40,7 @@ class AddressInfo(_message.Message):
     USEADDRESSUS_FIELD_NUMBER: _ClassVar[int]
     addressUS: AddressInfoUS
     useAddressUS: bool
-    def __init__(
-        self,
-        addressUS: _Optional[_Union[AddressInfoUS, _Mapping]] = ...,
-        useAddressUS: bool = ...,
-    ) -> None: ...
+    def __init__(self, addressUS: _Optional[_Union[AddressInfoUS, _Mapping]] = ..., useAddressUS: bool = ...) -> None: ...
 
 class AddressInfoUS(_message.Message):
     __slots__ = ("Street1", "Street2", "City", "State", "Zip")
@@ -72,11 +54,4 @@ class AddressInfoUS(_message.Message):
     City: str
     State: str
     Zip: int
-    def __init__(
-        self,
-        Street1: _Optional[str] = ...,
-        Street2: _Optional[str] = ...,
-        City: _Optional[str] = ...,
-        State: _Optional[str] = ...,
-        Zip: _Optional[int] = ...,
-    ) -> None: ...
+    def __init__(self, Street1: _Optional[str] = ..., Street2: _Optional[str] = ..., City: _Optional[str] = ..., State: _Optional[str] = ..., Zip: _Optional[int] = ...) -> None: ...
