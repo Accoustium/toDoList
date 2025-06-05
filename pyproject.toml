@@ -1,0 +1,25 @@
+[build-system]
+requires = [ "setuptools>=61.2.0", "wheel" ]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "toDoList"
+requires-python = ">=3.8"
+description = "A Python library for creating Stream Deck plugins using gRPC."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+dynamic = ["version"]
+authors = [ { name = "Accoustium", email = "accoustium@gmail.com"} ]
+maintainers = [ { name = "Accoustium", email = "accoustium@gmail.com"} ]
+dependencies = [
+    "grpcio>=1.64.0",
+    "grpcio-tools>=1.64.0",
+    "protobuf>=4.25.3",
+    "pytest>=7.4.0",
+    "pre-commit>=4.2.0",
+]
+
+[project.urls]
+Repository = "https://github.com/Accoustium/toDoList.git"
+Issues = "https://github.com/Accoustium/toDoList/issues"

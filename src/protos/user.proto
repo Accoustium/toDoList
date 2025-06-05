@@ -7,6 +7,11 @@ message User {
     ContactInfo contact = 2;
 }
 
+message Group {
+    string groupName = 1;
+    repeated User members = 2; // List of users in the group
+}
+
 message ContactInfo {
     string email = 1;
     int32 homePhone = 2;

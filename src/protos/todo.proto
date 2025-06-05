@@ -1,9 +1,27 @@
 syntax = "proto3";
 
-import "protos.user.proto";
+import "user.proto";
 
 package todolist;
 
-message ToDoList {
-  user.User singleUser = 1;
+message ToDoItem {
+  string author = 1; // Author of the ToDoItem
+  string title = 2;
+  string description = 3;
+  bool completed = 4;
+  repeated user.Group groups = 5; // List of groups associated with the ToDoItem
+  ToDoProject project = 6; // Project associated with the ToDoItem
+  int32 priority = 7; // Priority of the ToDoItem
+  int64 dueDate = 8; // Due date in Unix timestamp format
+  int64 createdAt = 9; // Creation date in Unix timestamp format
+  int64 updatedAt = 10; // Last updated date in Unix timestamp format
+  string id = 11; // Unique identifier for the ToDoItem
+  int32 storyPoints = 12; // Story points for the ToDoItem
+}
+
+message ToDoProject {
+  string projectName = 1;
+  string projectDescription = 2;
+  int64 startDate = 3; // Start date in Unix timestamp format
+  int64 endDate = 4; // End date in Unix timestamp format
 }
