@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "user.proto";
+import "google/protobuf/empty.proto";
 
 package todolist;
 
@@ -24,4 +25,12 @@ message ToDoProject {
   string projectDescription = 2;
   int64 startDate = 3; // Start date in Unix timestamp format
   int64 endDate = 4; // End date in Unix timestamp format
+}
+
+service ToDoService {
+  rpc CreateToDoItem(ToDoItem) returns (ToDoItem);
+  rpc GetToDoItemById(string) returns (ToDoItem);
+  rpc UpdateToDoItem(ToDoItem) returns (ToDoItem);
+  rpc DeleteToDoItem(string) returns (google.protobuf.Empty);
+  rpc ListToDoItems(google.protobuf.Empty) returns (stream ToDoItem);
 }
