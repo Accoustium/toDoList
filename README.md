@@ -37,5 +37,5 @@ also adding a feature to allow users to determine the priority of tasks, and to 
 -----
 To update the gRPC Python files, you need to have the `grpcio-tools` package installed. You can then run the following command in the terminal:
 ```bash
-python -m grpc_tools.protoc -I .\src\protos --python_out=.\src\pygrpc --pyi_out=.\src\pygrpc --grpc_python_out=.\src\pygrpc .\src\protos\*
+python -m grpc_tools.protoc -I .\toDoList\protos --python_out=.\toDoList\pygrpc --pyi_out=.\toDoList\pygrpc --grpc_python_out=.\toDoList\pygrpc .\toDoList\protos\*
 ```
