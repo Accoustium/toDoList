@@ -6,12 +6,12 @@ from toDoList.server.json_database import JSONDatabase
 
 @pytest.fixture
 def json_database():
-    # db_name = "test_db_tasks"
-    # task_db = JSONDatabase(db_name)
+    db_name = "test_db_tasks"
+    task_db = JSONDatabase(db_name)
 
-    yield None
+    yield task_db
 
 
 def test_json_database(json_database):
-    # assert isinstance(task_db, JSONDatabase)
-    assert True
+    assert isinstance(json_database, JSONDatabase)
+

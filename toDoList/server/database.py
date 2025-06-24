@@ -1,7 +1,7 @@
 import os
 from typing import Any
 import sys
-sys.path.append(os.path.dirname(sys.path[0]) + '/..')
+sys.path.append(os.path.dirname(__file__) + '/..')
 import pygrpc
 
 
@@ -26,7 +26,7 @@ class Database:
     def delete_task(self, task: pygrpc.ToDoItem):
         raise NotImplementedError("This method should be overridden in subclasses")
 
-    def get_user(self, user_id: pygrpc.User.userId):
+    def get_user(self, user_id: int):
         raise NotImplementedError("This method should be overridden in subclasses")
 
     def update_user(self, user: pygrpc.User):
