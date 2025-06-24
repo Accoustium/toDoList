@@ -1,14 +1,25 @@
-from .database import Database
+import os
+from database import Database
 import json
 import sys
-sys.path.append(sys.path[0] + '/..')
+sys.path.append(os.path.dirname(sys.path[0]) + '/..')
 import pygrpc
 
 
-class JSONDatabase(Database):
+class JSONDatabase:
     def __init__(self, db_name):
         super().__init__(db_name)
+
+    def __enter__(self):
         self.load_tasks()
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if exc_type is not None:
+            print(f"An error occurred: {exc_val}")
+
+        self.save_tasks()
+        self.tasks = []
 
     def load_tasks(self):
         try:
@@ -22,14 +33,16 @@ class JSONDatabase(Database):
             json.dump(self.tasks, file)
 
     def add_task(self, task: pygrpc.ToDoItem):
-        result = super().add_task(task)
-        self.save_tasks()
-        return result
+        result = False
+        self.tasks.append(task)
 
-    def delete_task(self, task: pygrpc.ToDoItem):
-        result = super().delete_task(task)
-        self.save_tasks()
         return result
 
     def get_tasks(self):
-        return super().get_tasks()
+        result = self.tasks
+
+        return result
+
+    def delete_task(self, task: pygrpc.ToDoItem):
+        idx = self.tasks.index(task)
+        self.tasks.pop(idx)

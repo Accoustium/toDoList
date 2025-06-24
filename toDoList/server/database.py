@@ -1,6 +1,7 @@
+import os
 from typing import Any
 import sys
-sys.path.append(sys.path[0] + '/..')
+sys.path.append(os.path.dirname(sys.path[0]) + '/..')
 import pygrpc
 
 
@@ -11,6 +12,7 @@ class Database:
     def __init__(self, db_name, connection=None):
         self.db_name = db_name
         self.connection = connection
+        self.tasks = []
 
     def add_task(self, task: pygrpc.ToDoItem):
         raise NotImplementedError("This method should be overridden in subclasses")
