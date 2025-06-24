@@ -1,6 +1,6 @@
 import pytest
 import sys
-sys.path.append(sys.path[0] + '../../../..')
+sys.path.append(sys.path[0] + '/..')
 from toDoList.server.json_database import JSONDatabase
 
 
