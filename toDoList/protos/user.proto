@@ -5,11 +5,13 @@ package user;
 message User {
     string username = 1;
     ContactInfo contact = 2;
+    int32 userId = 3; // Unique identifier for the user
 }
 
 message Group {
     string groupName = 1;
     repeated User members = 2; // List of users in the group
+    int32 groupId = 3; // Unique identifier for the group
 }
 
 message ContactInfo {
@@ -17,11 +19,13 @@ message ContactInfo {
     int32 homePhone = 2;
     int32 mobilePhone = 3;
     AddressInfo address = 4;
+    int32 contactId = 5; // Unique identifier for the contact info
 }
 
 message AddressInfo {
     AddressInfoUS addressUS = 1;
     bool useAddressUS = 2;
+    int32 addressId = 3; // Unique identifier for the address info
 }
 
 message AddressInfoUS {
@@ -30,4 +34,5 @@ message AddressInfoUS {
     string City = 3;
     string State = 4;
     int32 Zip = 5;
+    int32 addressUSId = 6; // Unique identifier for the US address
 }

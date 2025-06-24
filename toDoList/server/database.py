@@ -1,4 +1,7 @@
 from typing import Any
+import sys
+sys.path.append(sys.path[0] + '/..')
+import pygrpc
 
 
 class Database:
@@ -9,11 +12,32 @@ class Database:
         self.db_name = db_name
         self.connection = connection
 
-    def add_task(self, task):
+    def add_task(self, task: pygrpc.ToDoItem):
         raise NotImplementedError("This method should be overridden in subclasses")
 
     def get_tasks(self):
         raise NotImplementedError("This method should be overridden in subclasses")
 
-    def delete_task(self, task):
+    def update_task(self):
+        raise NotImplementedError("This method should be overridden in subclasses")
+
+    def delete_task(self, task: pygrpc.ToDoItem):
+        raise NotImplementedError("This method should be overridden in subclasses")
+
+    def get_user(self, user_id: pygrpc.User.userId):
+        raise NotImplementedError("This method should be overridden in subclasses")
+
+    def update_user(self, user: pygrpc.User):
+        raise NotImplementedError("This method should be overridden in subclasses")
+
+    def get_all_users(self):
+        raise NotImplementedError("This method should be overridden in subclasses")
+
+    def update_group(self, group: pygrpc.Group):
+        raise NotImplementedError("This method should be overridden in subclasses")
+
+    def update_contact_info(self, contact_info: pygrpc.ContactInfo):
+        raise NotImplementedError("This method should be overridden in subclasses")
+
+    def update_address_info(self, address_info: pygrpc.AddressInfo):
         raise NotImplementedError("This method should be overridden in subclasses")
